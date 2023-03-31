@@ -99,3 +99,85 @@ std::string CStringlib::str_ReplaceA(const std::string& search, const std::strin
 {
 	return std::regex_replace(search, std::regex(from), to);
 }
+
+fstring CStringlib::str_StrimLeft(const fstring& fstr)
+{
+	if (fstr.empty()) return fstr;
+	auto&& len = fstr.size();
+	size_t index = 0;
+	while (index < len && _T(' ') == fstr[index]) {
+		++index;
+	}
+	return fstr.substr(index);
+}
+
+fstring CStringlib::str_StrimRight(const fstring& fstr)
+{
+	if (fstr.empty()) return fstr;
+	auto&& len = fstr.size() - 1;
+	auto index = len;
+	while (fstring::npos != index && _T(' ') == fstr[index]) {
+		--index;
+	}
+	return (len == index) ? fstr : fstr.substr(0, index + 1);
+}
+
+fstring CStringlib::str_StrimAll(const fstring& fstr)
+{
+	if (fstr.empty()) return fstr;
+	auto&& len = fstr.size();
+	size_t index = 0;
+	while (index < len && _T(' ') == fstr[index]) {
+		++index;
+	}
+	fstring ret = fstr.substr(index);
+
+	if (ret.empty()) return ret;
+	len = ret.size() - 1;
+	index = len;
+	while (fstring::npos != index && _T(' ') == ret[index]) {
+		--index;
+	}
+	return (len == index) ? ret : ret.substr(0, index + 1);
+}
+
+std::string CStringlib::str_StrimLeftA(const std::string& str)
+{
+	if (str.empty()) return str;
+	auto&& len = str.size();
+	size_t index = 0;
+	while (index < len && ' ' == str[index]) {
+		++index;
+	}
+	return str.substr(index);
+}
+
+std::string CStringlib::str_StrimRightA(const std::string& str)
+{
+	if (str.empty()) return str;
+	auto&& len = str.size() - 1;
+	auto index = len;
+	while (std::string::npos != index && ' ' == str[index]) {
+		--index;
+	}
+	return (len == index) ? str : str.substr(0, index + 1);
+}
+
+std::string CStringlib::str_StrimAllA(const std::string& str)
+{
+	if (str.empty()) return str;
+	auto&& len = str.size();
+	size_t index = 0;
+	while (index < len && ' ' == str[index]) {
+		++index;
+	}
+	std::string ret = str.substr(index);
+
+	if (ret.empty()) return ret;
+	len = ret.size() - 1;
+	index = len;
+	while (std::string::npos != index && ' ' == ret[index]) {
+		--index;
+	}
+	return (len == index) ? ret : ret.substr(0, index + 1);
+}

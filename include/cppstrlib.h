@@ -51,10 +51,17 @@ public:
 	//Some functions about math
 
 public:
-	//Some basic functions
+	//Some functions about modification
 	static fstring str_Replace(const fstring& search, const fstring& from, const fstring& to);
 	static std::string str_ReplaceA(const std::string& search, const std::string& from, const std::string& to);
-	
+
+	static fstring str_StrimLeft(const fstring& fstr);
+	static fstring str_StrimRight(const fstring& fstr);
+	static fstring str_StrimAll(const fstring& fstr);
+
+	static std::string str_StrimLeftA(const std::string& str);
+	static std::string str_StrimRightA(const std::string& str);
+	static std::string str_StrimAllA(const std::string& str);
 public:
 	//Some define
 	
