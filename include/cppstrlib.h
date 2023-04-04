@@ -39,6 +39,12 @@ public:
 	static std::string path_SystemSlashFormatA(const std::string& str, OSType type = OSType::OS_MIN);
 	
 	/*
+		check directory exixts
+	*/
+	static bool path_IsDirectoryExists(const fstring& path);
+	static bool path_IsDirectoryExistsA(const std::string& path);
+
+	/*
 		'a/b/c' -> 'a/b/'
 	*/
 	static fstring path_GetDir(const fstring& path);

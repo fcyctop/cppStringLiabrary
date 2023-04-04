@@ -2,7 +2,8 @@
 #include<Windows.h>
 #include<string>
 #include<regex>
-
+#include<sys/types.h>
+#include<sys/stat.h>
 fstring CStringlib::str2fstr(const std::string& str)
 {
 #ifdef UNICODE
@@ -65,6 +66,18 @@ std::string CStringlib::path_SystemSlashFormatA(const std::string& fstr, OSType 
 	std::string to{ "/" };
 #endif // UNICODE
 	return str_ReplaceA(fstr, from, to);
+}
+
+bool CStringlib::path_IsDirectoryExists(const fstring& path)
+{
+	struct _stat info;
+	return (0 == _wstat(path.c_str(), &info) && (S_IFDIR & info.st_mode));
+}
+
+bool CStringlib::path_IsDirectoryExistsA(const std::string& path)
+{
+	struct stat info;
+	return (0 == stat(path.c_str(), &info) && (S_IFDIR & info.st_mode));
 }
 
 fstring CStringlib::path_GetDir(const fstring& path)
