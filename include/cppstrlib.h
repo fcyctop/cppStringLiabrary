@@ -52,6 +52,17 @@ public:
 
 public:
 	//Some functions about files
+	static bool file_OpenFile(FILE** obj, const fstring& file, const fstring& mode);
+	static bool file_OpenFileA(FILE** obj, const std::string& file, const std::string& mode);
+
+	static size_t file_GetSize(const fstring& file);
+	static size_t file_GetSizeA(const std::string& file);
+
+	static time_t file_GetCreateTime(const fstring& file);
+	static time_t fiel_GetCreateTimeA(const std::string& file);
+
+	static time_t file_GetModifyTime(const fstring& file);
+	static time_t file_GetModifyTimeA(const std::string& file);
 
 public:
 	//Some functions about math

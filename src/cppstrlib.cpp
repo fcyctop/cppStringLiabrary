@@ -98,6 +98,70 @@ std::string CStringlib::path_GetDirA(const std::string& path)
 	return ret;
 }
 
+bool CStringlib::file_OpenFile(FILE** obj, const fstring& file, const fstring& mode)
+{
+	return _wfopen_s(obj, file.c_str(), mode.c_str());
+}
+
+bool CStringlib::file_OpenFileA(FILE** obj, const std::string& file, const std::string& mode)
+{
+	return fopen_s(obj, file.c_str(), mode.c_str());
+}
+
+size_t CStringlib::file_GetSize(const fstring& file)
+{
+	struct _stat info;
+	if (0 == _wstat(file.c_str(), &info)) {
+		return info.st_size;
+	}
+	return 0;
+}
+
+size_t CStringlib::file_GetSizeA(const std::string& file)
+{
+	struct stat info;
+	if (0 == stat(file.c_str(), &info)) {
+		return info.st_size;
+	}
+	return 0;
+}
+
+time_t CStringlib::file_GetCreateTime(const fstring& file)
+{
+	struct _stat info;
+	if (0 == _wstat(file.c_str(), &info)) {
+		return info.st_ctime;
+	}
+	return 0;
+}
+
+time_t CStringlib::fiel_GetCreateTimeA(const std::string& file)
+{
+	struct stat info;
+	if (0 == stat(file.c_str(), &info)) {
+		return info.st_ctime;
+	}
+	return 0;
+}
+
+time_t CStringlib::file_GetModifyTime(const fstring& file)
+{
+	struct _stat info;
+	if (0 == _wstat(file.c_str(), &info)) {
+		return info.st_mtime;
+	}
+	return 0;
+}
+
+time_t CStringlib::file_GetModifyTimeA(const std::string& file)
+{
+	struct stat info;
+	if (0 == stat(file.c_str(), &info)) {
+		return info.st_mtime;
+	}
+	return 0;
+}
+
 fstring CStringlib::str_Replace(const fstring& search, const fstring& from, const fstring& to)
 {
 #ifdef UNICODE
