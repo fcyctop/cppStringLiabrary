@@ -1,11 +1,12 @@
 #pragma once
 #include<iostream>
-#include<tchar.h>
 
 #ifdef UNICODE
 using fstring = std::wstring;
+#define _T(x) L ## x
 #else
 using fstring = std::string;
+#define _T(x) x
 #endif // UNICODE
 
 enum class OSType {
@@ -19,7 +20,11 @@ enum class OSType {
 	OS_MAX,		//never use
 };
 
+#ifdef _WIN32
 #define DLLEXPORT __declspec(dllexport)
+#else
+#define DLLEXPORT
+#endif
 
 class DLLEXPORT CStringlib final 
 {
@@ -59,7 +64,7 @@ public:
 	static size_t file_GetSizeA(const std::string& file);
 
 	static time_t file_GetCreateTime(const fstring& file);
-	static time_t fiel_GetCreateTimeA(const std::string& file);
+	static time_t file_GetCreateTimeA(const std::string& file);
 
 	static time_t file_GetModifyTime(const fstring& file);
 	static time_t file_GetModifyTimeA(const std::string& file);

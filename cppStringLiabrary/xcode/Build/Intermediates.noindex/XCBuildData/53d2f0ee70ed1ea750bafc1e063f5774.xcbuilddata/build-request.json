@@ -1,0 +1,56 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "2bc1644de848f34065efca56b8bfd2eada6fa69aae52e8087a0b9de4eaccfe19"
+    }
+  ],
+  "containerPath" : "/Users/xuyw/Desktop/lsc/cppStringLiabrary/cppStringLiabrary/xcode/cppStringLiabrary.xcworkspace",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx13.3",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/xuyw/Desktop/lsc/cppStringLiabrary/cppStringLiabrary/xcode/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/xuyw/Desktop/lsc/cppStringLiabrary/cppStringLiabrary/xcode/Build/Products",
+      "derivedDataPath" : "/Users/xuyw/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/xuyw/Library/Developer/Xcode/DerivedData/cppStringLiabrary-awrveogesisnuqbaagotkdhwkohw/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/xuyw/Library/Developer/Xcode/DerivedData/cppStringLiabrary-awrveogesisnuqbaagotkdhwkohw/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/xuyw/Desktop/lsc/cppStringLiabrary/cppStringLiabrary/xcode/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

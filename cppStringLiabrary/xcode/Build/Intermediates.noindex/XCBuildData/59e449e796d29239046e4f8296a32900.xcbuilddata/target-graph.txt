@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+cppStringlib in cppStringlib, no dependencies
+test in test, depends on:
+cppStringlib in cppStringlib (implicit dependency via file 'libcppStringlib.dylib' in build phase 'Link Binary')
