@@ -11,10 +11,7 @@ int main()
 {
 	std::string str = ("/Users/xuyw/Desktop/TestSpace");
 
-    auto b = CStringlib::path_IsDirectoryExists(str);
-    cout<<(b?"true":"false")<<endl;
-	system("pause");
-
-
+    auto ret = CStringlib::str_Replace(str, "/xuyw", "\\slsc");
+    cout<<ret<<endl;
 	return 0;
 }
